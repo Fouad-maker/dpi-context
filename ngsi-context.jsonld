@@ -8,6 +8,7 @@
         "Activity": "fiware:Activity",
         "Asset": "fiware:Asset",
         "Attestation": "fiware:Attestation",
+        "Canvas": "fiware:Canvas",
         "Claim": "fiware:Claim",
         "DLTtxReceipt": "fiware:DLTtxReceipt",
         "Inspection": "fiware:Inspection",
@@ -52,6 +53,7 @@
         "factory": "fiware:factory",
         "firmwareVersion": "fiware:firmwareVersion",
         "firstUsedAt": "fiware:firstUsedAt",
+        "groupId": "fiware:groupId",
         "hardwareVersion": "fiware:hardwareVersion",
         "hasClaims": "fiware:hasClaims",
         "image": "fiware:image",
@@ -78,6 +80,7 @@
         "operationOutput": "fiware:operationOutput",
         "operationType": "fiware:operationType",
         "operator": "fiware:operator",
+        "order": "fiware:order",
         "osVersion": "fiware:osVersion",
         "owner": "fiware:owner",
         "plan": "fiware:plan",
@@ -109,6 +112,8 @@
         "subscriptionService": "fiware:subscriptionService",
         "supplierName": "fiware:supplierName",
         "supportedProtocol": "fiware:supportedProtocol",
+        "title": "fiware:title",
+        "topicsGroup": "fiware:topicsGroup",
         "voltage": "fiware:voltage"
     }
 }
