@@ -10,6 +10,7 @@
         "Activity": "fiware:Activity",
         "Asset": "fiware:Asset",
         "Attestation": "fiware:Attestation",
+        "Canvas": "fiware:Canvas",
         "Claim": "fiware:Claim",
         "DLTtxReceipt": "fiware:DLTtxReceipt",
         "Inspection": "fiware:Inspection",
@@ -159,6 +160,10 @@
             "@id": "fiware:firstUsedAt",
             "@type": "xs:dateTime"
         },
+        "groupId": {
+            "@id": "fiware:groupId",
+            "@type": "xsd:integer"
+        },
         "hardwareVersion": {
             "@id": "fiware:hardwareVersion",
             "@type": "xsd:string"
@@ -253,6 +258,10 @@
         "operator": {
             "@id": "fiware:operator",
             "@type": "@id"
+        },
+        "order": {
+            "@id": "fiware:order",
+            "@type": "xsd:integer"
         },
         "osVersion": {
             "@id": "fiware:osVersion",
@@ -378,6 +387,11 @@
             "@id": "fiware:supportedProtocol",
             "@type": "xsd:array"
         },
+        "title": {
+            "@id": "fiware:title",
+            "@type": "xsd:string"
+        },
+        "topicsGroup": "fiware:topicsGroup",
         "voltage": {
             "@id": "fiware:voltage",
             "@type": "xsd:number"
@@ -568,6 +582,25 @@
                 {
                     "@language": "en",
                     "@value": "DLTtxReceipt"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "fiware:Canvas",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "A Canvas Section specifies a topic stakeholders can collaborate on to reach commitments and ultimately an agreement. A Canvas Section might contain sub-sections."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Canvas"
                 }
             ],
             "rdfs:subClassOf": {
@@ -955,6 +988,86 @@
                 {
                     "@language": "en",
                     "@value": "strategicObjective"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Unique identifier of the entity"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:title",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "A title for this item"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "title"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:topicsGroup",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The mailing address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "topicsGroup"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:order",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The order of Canvas section in a group of topics"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "order"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:description",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "A description of this item"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "description"
                 }
             ]
         }
