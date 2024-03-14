@@ -15,6 +15,7 @@
         "DLTtxReceipt": "fiware:DLTtxReceipt",
         "Inspection": "fiware:Inspection",
         "Machine": "fiware:Machine",
+        "Post": "fiware:Post",
         "Project": "fiware:Project",
         "Repair": "fiware:Repair",
         "Transfer": "fiware:Transfer",
@@ -56,6 +57,10 @@
             "@id": "fiware:assetIdentifier",
             "@type": "xsd:string"
         },
+        "author": {
+            "@id": "fiware:author",
+            "@type": "xsd:string"
+        },
         "axis": {
             "@id": "fiware:axis",
             "@type": "xsd:string"
@@ -91,6 +96,10 @@
         "consumes": {
             "@id": "fiware:consumes",
             "@type": "xsd:array"
+        },
+        "content": {
+            "@id": "fiware:content",
+            "@type": "xsd:string"
         },
         "countryOfManufacture": {
             "@id": "fiware:countryOfManufacture",
@@ -608,6 +617,25 @@
             }
         },
         {
+            "@id": "fiware:Post",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Stakeholders discuss topics by posting Post that form a thread.A post can be marked as commitment to indicate finality of a thread."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Post"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
             "@id": "fiware:address",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -1068,6 +1096,102 @@
                 {
                     "@language": "en",
                     "@value": "description"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Unique identifier of the entity"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:title",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "A title for this item"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "title"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:author",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The publisher of this Post"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "author"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:content",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The content of this Post"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "content"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateCreated",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Entity creation timestamp. This will usually be allocated by the storage platform"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateCreated"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateModified",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Timestamp of the last modification of the entity. This will usually be allocated by the storage platform"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateModified"
                 }
             ]
         }
