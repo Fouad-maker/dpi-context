@@ -12,9 +12,12 @@
         "Attestation": "fiware:Attestation",
         "Canvas": "fiware:Canvas",
         "Claim": "fiware:Claim",
+        "Comment": "fiware:Comment",
+        "Commitment": "fiware:Commitment",
         "DLTtxReceipt": "fiware:DLTtxReceipt",
         "Inspection": "fiware:Inspection",
         "Machine": "fiware:Machine",
+        "Milestone": "fiware:Milestone",
         "Post": "fiware:Post",
         "Project": "fiware:Project",
         "Repair": "fiware:Repair",
@@ -69,6 +72,14 @@
             "@id": "fiware:batteryLevel",
             "@type": "xsd:number"
         },
+        "belongsTo": {
+            "@id": "fiware:belongsTo",
+            "@type": "@id"
+        },
+        "budget": {
+            "@id": "fiware:budget",
+            "@type": "xsd:number"
+        },
         "building": {
             "@id": "fiware:building",
             "@type": "@id"
@@ -89,6 +100,10 @@
             "@id": "fiware:commandSequence",
             "@type": "xsd:array"
         },
+        "commitTo": {
+            "@id": "fiware:commitTo",
+            "@type": "@id"
+        },
         "consumedVia": {
             "@id": "fiware:consumedVia",
             "@type": "xsd:undefined"
@@ -100,6 +115,10 @@
         "content": {
             "@id": "fiware:content",
             "@type": "xsd:string"
+        },
+        "contributors": {
+            "@id": "fiware:contributors",
+            "@type": "xsd:array"
         },
         "countryOfManufacture": {
             "@id": "fiware:countryOfManufacture",
@@ -121,6 +140,10 @@
             "@id": "fiware:dateCreated",
             "@type": "xs:dateTime"
         },
+        "dateFinalization": {
+            "@id": "fiware:dateFinalization",
+            "@type": "xs:dateTime"
+        },
         "dateModified": {
             "@id": "fiware:dateModified",
             "@type": "xs:dateTime"
@@ -136,6 +159,10 @@
         "delegationsInvolved": {
             "@id": "fiware:delegationsInvolved",
             "@type": "xsd:array"
+        },
+        "deliveryStatus": {
+            "@id": "fiware:deliveryStatus",
+            "@type": "xsd:string"
         },
         "description": {
             "@id": "fiware:description",
@@ -194,6 +221,10 @@
         "isWasteMaterial": {
             "@id": "fiware:isWasteMaterial",
             "@type": "xsd:boolean"
+        },
+        "keyData": {
+            "@id": "fiware:keyData",
+            "@type": "xsd:string"
         },
         "link": {
             "@id": "fiware:link",
@@ -280,6 +311,10 @@
             "@id": "fiware:owner",
             "@type": "xsd:array"
         },
+        "percentageOfCompletion": {
+            "@id": "fiware:percentageOfCompletion",
+            "@type": "xsd:number"
+        },
         "plan": {
             "@id": "fiware:plan",
             "@type": "xsd:string"
@@ -327,6 +362,10 @@
         "removedParts": {
             "@id": "fiware:removedParts",
             "@type": "xsd:array"
+        },
+        "replyTo": {
+            "@id": "fiware:replyTo",
+            "@type": "@id"
         },
         "result": {
             "@id": "fiware:result",
@@ -407,25 +446,6 @@
         }
     },
     "@graph": [
-        {
-            "@id": "fiware:Project",
-            "@type": "rdfs:Class",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Set of activities that, when executed support the compliance of a strategic goal (Provision of Key Services, Management Evolution, Close contact with Territory, Enterprises Boosting, Focused Investment, Social/Cultural/Sports Promotion, etc.). This goal itself is composed of one or more project,s and address one of the strategic axes (Work model, Economic development, Social development, Environmental Development) that give a high level shape to the Strategic Plan"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "Project"
-                }
-            ],
-            "rdfs:subClassOf": {
-                "@id": "schema:Thing"
-            }
-        },
         {
             "@id": "fiware:Inspection",
             "@type": "rdfs:Class",
@@ -598,6 +618,25 @@
             }
         },
         {
+            "@id": "fiware:Project",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Set of activities that, when executed support the compliance of a strategic goal (Provision of Key Services, Management Evolution, Close contact with Territory, Enterprises Boosting, Focused Investment, Social/Cultural/Sports Promotion, etc.). This goal itself is composed of one or more project,s and address one of the strategic axes (Work model, Economic development, Social development, Environmental Development) that give a high level shape to the Strategic Plan"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Project"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
             "@id": "fiware:Canvas",
             "@type": "rdfs:Class",
             "rdfs:comment": [
@@ -629,6 +668,63 @@
                 {
                     "@language": "en",
                     "@value": "Post"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "fiware:Milestone",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "A milestone is the translation of legal text into an entity or unit that can be used in project management."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Milestone"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "fiware:Comment",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "A Comment is the reply pushed by user to a specific Post in order to discuss a particular posted topic."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Comment"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "fiware:Commitment",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "A Commitment is a post that has been marked as ‘commitment’, usually at the end of a thread."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Commitment"
                 }
             ],
             "rdfs:subClassOf": {
@@ -1100,6 +1196,22 @@
             ]
         },
         {
+            "@id": "fiware:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship. Reference to the entity Project that this Canvas belongs to ."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
+                }
+            ]
+        },
+        {
             "@id": "fiware:id",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -1192,6 +1304,422 @@
                 {
                     "@language": "en",
                     "@value": "dateModified"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Unique identifier of the entity"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:title",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "A title for this item"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "title"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:author",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The publisher of this Post"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "author"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:description",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The content of this Post"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "description"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateCreated",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Entity creation timestamp. This will usually be allocated by the storage platform"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateCreated"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateModified",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Timestamp of the last modification of the entity. This will usually be allocated by the storage platform"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateModified"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateFinalization",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Milestone finalization timestamp."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateFinalization"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:percentageOfCompletion",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The percentage that represents terminated tasks in a milestone"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "percentageOfCompletion"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:budget",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The allocated budget to a Milestone"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "budget"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:contributors",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "All Contributors involved in the Milestone of a Project."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "contributors"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship. Reference to the entity Project, that this Milestone belongs to"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Unique identifier of the entity"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:title",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "A title for this item"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "title"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:author",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The publisher of this Reply"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "author"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:content",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The content of this Reply"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "content"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateCreated",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Entity creation timestamp. This will usually be allocated by the storage platform"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateCreated"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateModified",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Timestamp of the last modification of the entity. This will usually be allocated by the storage platform"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateModified"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:replyTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship. Reference to the entity Comment or Post, that this Reply belongs to"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "replyTo"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Unique identifier of the entity"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:title",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "A title for this item"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "title"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:keyData",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "An item selected by user to be used as Commitment Key Data"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "keyData"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:author",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The publisher of this Commitment"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "author"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:content",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The content of this Commitment"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "content"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateCreated",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Entity creation timestamp. This will usually be allocated by the storage platform"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateCreated"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateModified",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Timestamp of the last modification of the entity. This will usually be allocated by the storage platform"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateModified"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:commitTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship. Reference to the entity Post that this Commitment belongs to ."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "commitTo"
                 }
             ]
         }
