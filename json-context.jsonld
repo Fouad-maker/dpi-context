@@ -196,6 +196,10 @@
             "@id": "fiware:firstUsedAt",
             "@type": "xs:dateTime"
         },
+        "funding": {
+            "@id": "fiware:funding",
+            "@type": "xsd:string"
+        },
         "groupId": {
             "@id": "fiware:groupId",
             "@type": "xsd:integer"
