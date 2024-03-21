@@ -1276,6 +1276,22 @@
             ]
         },
         {
+            "@id": "fiware:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship. Reference to the entity Canvas that this Post item belongs to ."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
+                }
+            ]
+        },
+        {
             "@id": "fiware:dateCreated",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
