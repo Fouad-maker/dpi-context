@@ -65,6 +65,7 @@
         "factory": "fiware:factory",
         "firmwareVersion": "fiware:firmwareVersion",
         "firstUsedAt": "fiware:firstUsedAt",
+        "funding": "fiware:funding",
         "groupId": "fiware:groupId",
         "hardwareVersion": "fiware:hardwareVersion",
         "hasClaims": "fiware:hasClaims",
