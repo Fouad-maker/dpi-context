@@ -75,6 +75,8 @@
         "interestGroups": "fiware:interestGroups",
         "isWasteMaterial": "fiware:isWasteMaterial",
         "keyData": "fiware:keyData",
+        "keyDataType": "fiware:keyDataType",
+        "keyDataValue": "fiware:keyDataValue",
         "link": "fiware:link",
         "location": "fiware:location",
         "machine": "fiware:machine",
