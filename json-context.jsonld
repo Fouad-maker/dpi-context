@@ -226,8 +226,13 @@
             "@id": "fiware:isWasteMaterial",
             "@type": "xsd:boolean"
         },
-        "keyData": {
-            "@id": "fiware:keyData",
+        "keyData": "fiware:keyData",
+        "keyDataType": {
+            "@id": "fiware:keyDataType",
+            "@type": "xsd:string"
+        },
+        "keyDataValue": {
+            "@id": "fiware:keyDataValue",
             "@type": "xsd:string"
         },
         "link": {
@@ -1653,7 +1658,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "An item selected by user to be used as Commitment Key Data"
+                    "@value": "An item selected by user to be used as Commitment Key Data."
                 }
             ],
             "rdfs:label": [
