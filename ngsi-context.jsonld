@@ -105,6 +105,7 @@
         "plannedStartAt": "fiware:plannedStartAt",
         "postOfficeBoxNumber": "fiware:postOfficeBoxNumber",
         "postalCode": "fiware:postalCode",
+        "postedIn": "fiware:postedIn",
         "power": "fiware:power",
         "producedVia": "fiware:producedVia",
         "produces": "fiware:produces",
