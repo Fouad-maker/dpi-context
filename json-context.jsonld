@@ -344,6 +344,10 @@
             "@id": "fiware:postalCode",
             "@type": "xsd:string"
         },
+        "postedIn": {
+            "@id": "fiware:postedIn",
+            "@type": "@id"
+        },
         "power": {
             "@id": "fiware:power",
             "@type": "xsd:number"
@@ -1297,6 +1301,22 @@
                 {
                     "@language": "en",
                     "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:postedIn",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship. Reference to the entity Project that this Post item created in."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "postedIn"
                 }
             ]
         },
