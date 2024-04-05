@@ -18,6 +18,7 @@
         "Inspection": "fiware:Inspection",
         "Machine": "fiware:Machine",
         "Milestone": "fiware:Milestone",
+        "Organization": "fiware:Organization",
         "Post": "fiware:Post",
         "Project": "fiware:Project",
         "Repair": "fiware:Repair",
@@ -168,6 +169,10 @@
             "@id": "fiware:description",
             "@type": "xsd:string"
         },
+        "displayName": {
+            "@id": "fiware:displayName",
+            "@type": "xsd:string"
+        },
         "district": {
             "@id": "fiware:district",
             "@type": "xsd:string"
@@ -243,6 +248,10 @@
             "@id": "fiware:location",
             "@type": "xsd:undefined"
         },
+        "logoUrl": {
+            "@id": "fiware:logoUrl",
+            "@type": "xsd:string"
+        },
         "machine": {
             "@id": "fiware:machine",
             "@type": "@id"
@@ -311,6 +320,10 @@
         "order": {
             "@id": "fiware:order",
             "@type": "xsd:integer"
+        },
+        "org_id": {
+            "@id": "fiware:org_id",
+            "@type": "xsd:string"
         },
         "osVersion": {
             "@id": "fiware:osVersion",
@@ -745,6 +758,25 @@
             }
         },
         {
+            "@id": "fiware:Organization",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "An Organization is a a representation contributor or part of the process."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Organization"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
             "@id": "fiware:address",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -1029,6 +1061,22 @@
                 {
                     "@language": "en",
                     "@value": "observations"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:author",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The publisher or creator of this Item"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "author"
                 }
             ]
         },
@@ -1765,6 +1813,118 @@
                 {
                     "@language": "en",
                     "@value": "commitTo"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Unique identifier of the entity"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:name",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "A title for this item"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "name"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:displayName",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The publisher of this Reply"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "displayName"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:logoUrl",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The log of this Organization"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "logoUrl"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:org_id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The organization identifier metadata"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "org_id"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateCreated",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Entity creation timestamp. This will usually be allocated by the storage platform"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateCreated"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:dateModified",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Timestamp of the last modification of the entity. This will usually be allocated by the storage platform"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateModified"
                 }
             ]
         }
