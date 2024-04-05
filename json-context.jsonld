@@ -45,6 +45,10 @@
             "@id": "fiware:advisedAction",
             "@type": "xsd:string"
         },
+        "allowedOrgs": {
+            "@id": "fiware:allowedOrgs",
+            "@type": "xsd:array"
+        },
         "alt": {
             "@id": "fiware:alt",
             "@type": "xsd:string"
@@ -1365,6 +1369,22 @@
                 {
                     "@language": "en",
                     "@value": "postedIn"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:allowedOrgs",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Organizations allowed to see this Item. Empty array means this Item is public."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "allowedOrgs"
                 }
             ]
         },
