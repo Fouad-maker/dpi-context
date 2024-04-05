@@ -28,6 +28,7 @@
         "addressLocality": "fiware:addressLocality",
         "addressRegion": "fiware:addressRegion",
         "advisedAction": "fiware:advisedAction",
+        "allowedOrgs": "fiware:allowedOrgs",
         "alt": "fiware:alt",
         "alternateName": "fiware:alternateName",
         "areaServed": "fiware:areaServed",
