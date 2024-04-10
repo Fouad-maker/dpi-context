@@ -13,7 +13,6 @@
         "Canvas": "fiware:Canvas",
         "Claim": "fiware:Claim",
         "Comment": "fiware:Comment",
-        "Commitment": "fiware:Commitment",
         "DLTtxReceipt": "fiware:DLTtxReceipt",
         "Inspection": "fiware:Inspection",
         "Machine": "fiware:Machine",
@@ -104,10 +103,6 @@
         "commandSequence": {
             "@id": "fiware:commandSequence",
             "@type": "xsd:array"
-        },
-        "commitTo": {
-            "@id": "fiware:commitTo",
-            "@type": "@id"
         },
         "consumedVia": {
             "@id": "fiware:consumedVia",
@@ -230,6 +225,10 @@
         "interestGroups": {
             "@id": "fiware:interestGroups",
             "@type": "xsd:array"
+        },
+        "isCommitment": {
+            "@id": "fiware:isCommitment",
+            "@type": "xsd:boolean"
         },
         "isWasteMaterial": {
             "@id": "fiware:isWasteMaterial",
@@ -363,6 +362,10 @@
         },
         "postedIn": {
             "@id": "fiware:postedIn",
+            "@type": "@id"
+        },
+        "postedUnder": {
+            "@id": "fiware:postedUnder",
             "@type": "@id"
         },
         "power": {
@@ -736,25 +739,6 @@
                 {
                     "@language": "en",
                     "@value": "Comment"
-                }
-            ],
-            "rdfs:subClassOf": {
-                "@id": "schema:Thing"
-            }
-        },
-        {
-            "@id": "fiware:Commitment",
-            "@type": "rdfs:Class",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "A Commitment is a post that has been marked as ‘commitment’, usually at the end of a thread."
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "Commitment"
                 }
             ],
             "rdfs:subClassOf": {
@@ -1341,6 +1325,22 @@
             ]
         },
         {
+            "@id": "fiware:postedUnder",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship. Reference to the entity Project, that this Post belongs to"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "postedUnder"
+                }
+            ]
+        },
+        {
             "@id": "fiware:belongsTo",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
@@ -1385,6 +1385,38 @@
                 {
                     "@language": "en",
                     "@value": "allowedOrgs"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:keyData",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "An item selected by user to be used as Commitment Key Data."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "keyData"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:isCommitment",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "True when this Item converted to Commitment, based on user request. False if its not(default)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "isCommitment"
                 }
             ]
         },
@@ -1693,50 +1725,18 @@
             ]
         },
         {
-            "@id": "fiware:replyTo",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Relationship. Reference to the entity Comment or Post, that this Reply belongs to"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "replyTo"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:id",
+            "@id": "fiware:isCommitment",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Unique identifier of the entity"
+                    "@value": "True when this Item converted to Commitment, based on user request. False if its not(default)"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "id"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:title",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "A title for this item"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "title"
+                    "@value": "isCommitment"
                 }
             ]
         },
@@ -1757,82 +1757,34 @@
             ]
         },
         {
-            "@id": "fiware:author",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "The publisher of this Commitment"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "author"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:content",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "The content of this Commitment"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "content"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:dateCreated",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Entity creation timestamp. This will usually be allocated by the storage platform"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "dateCreated"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:dateModified",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Timestamp of the last modification of the entity. This will usually be allocated by the storage platform"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "dateModified"
-                }
-            ]
-        },
-        {
-            "@id": "fiware:commitTo",
+            "@id": "fiware:postedUnder",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Relationship. Reference to the entity Post that this Commitment belongs to ."
+                    "@value": "Relationship. Reference to the entity Project, that this Reply belongs to"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "commitTo"
+                    "@value": "postedUnder"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:replyTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship. Reference to the entity Comment or Post, that this Reply belongs to"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "replyTo"
                 }
             ]
         },
