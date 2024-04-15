@@ -64,6 +64,10 @@
             "@id": "fiware:assetIdentifier",
             "@type": "xsd:string"
         },
+        "auth0AuthorID": {
+            "@id": "fiware:auth0AuthorID",
+            "@type": "xsd:string"
+        },
         "author": {
             "@id": "fiware:author",
             "@type": "xsd:string"
@@ -1309,6 +1313,22 @@
             ]
         },
         {
+            "@id": "fiware:auth0AuthorID",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The publisher auth0 sub claim from token"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "auth0AuthorID"
+                }
+            ]
+        },
+        {
             "@id": "fiware:content",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -1673,6 +1693,22 @@
                 {
                     "@language": "en",
                     "@value": "author"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:auth0AuthorID",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The publisher auth0 sub claim from token"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "auth0AuthorID"
                 }
             ]
         },
