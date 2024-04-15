@@ -32,6 +32,7 @@
         "alternateName": "fiware:alternateName",
         "areaServed": "fiware:areaServed",
         "assetIdentifier": "fiware:assetIdentifier",
+        "auth0AuthorID": "fiware:auth0AuthorID",
         "author": "fiware:author",
         "axis": "fiware:axis",
         "batteryLevel": "fiware:batteryLevel",
